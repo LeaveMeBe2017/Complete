@@ -1,0 +1,62 @@
+﻿<Window x:Class="Test1.Pages.GoodsClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test1.Pages"
+        mc:Ignorable="d"
+        Title="Список товаров" Height="1350" Width="1300" FontSize="20" FontFamily="Comic Sans MS" Icon="/Test1;component/Images/icon.ico">
+    <Grid>
+        <Label HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="fioElem">ФИО</Label>
+        <StackPanel>
+            <Image Source="../Images/logo.png" Height="100"></Image>
+            <Label HorizontalAlignment="Center">Список товаров</Label>
+            <StackPanel 
+                Margin="5"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+            >
+                <Label>Поиск</Label>
+                <TextBox Width="300" x:Name="searchElem" TextChanged="searchElem_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel 
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Label>Фильтр по производителю</Label>
+                <ComboBox
+                    x:Name="manufacturersElem"
+                    Width="200"
+                    Margin="5" SelectionChanged="manufacturersElem_SelectionChanged">
+                </ComboBox>
+            </StackPanel>
+            
+            <DataGrid
+                x:Name="goodsListElem" 
+                AutoGenerateColumns="False"
+                IsReadOnly="True" 
+                FontSize="16"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Артикул" Width="*" Binding="{Binding ProductArticleNumber}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding ProductName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding ProductDescription}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Категория" Width="*" Binding="{Binding ProductCategory}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Производитель" Width="*" Binding="{Binding ProductManufacturer}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Стоимость" Width="*" Binding="{Binding ProductCost}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество на складе" Width="*" Binding="{Binding ProductQuantityInStock}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </StackPanel>
+        <Button 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Width="200" 
+            Background="#FF76E383"
+            Margin="5" 
+            Click="Button_Click"
+                
+            >На главную</Button>
+    </Grid>
+</Window>

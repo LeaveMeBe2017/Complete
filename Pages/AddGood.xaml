@@ -1,0 +1,38 @@
+﻿<Window x:Class="Test1.Pages.AddGood"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test1.Pages"
+        mc:Ignorable="d"
+        Title="Добавить товар" Height="900" Width="400" Icon="/Test1;component/Images/icon.ico" FontFamily="Comic Sans MS" FontSize="20">
+    <Grid>
+        <StackPanel>
+            <Image Source="../Images/logo.png" Height="100"></Image>
+            <Label>Артикул</Label>
+            <TextBox x:Name="articleElem"/>
+            <Label>Наименование</Label>
+            <TextBox x:Name="nameElem"/>
+            <Label>Описание</Label>
+            <TextBox Height="100" x:Name="descriptElem"/>
+            <Label>Категория</Label>
+            <ComboBox x:Name="categoryElem">
+                <ComboBoxItem>Защита лица, глаз, головы</ComboBoxItem>
+                <ComboBoxItem>Стеновые и фасадные материалы</ComboBoxItem>
+                <ComboBoxItem>Общестроительные материалы</ComboBoxItem>
+                <ComboBoxItem>Ручной инструмент</ComboBoxItem>
+                <ComboBoxItem>Сухие строительные смеси и гидроизоляция</ComboBoxItem>
+            </ComboBox>
+            <Label>Производитель</Label>
+            <TextBox x:Name="manufactElem"/>
+            <Label>Цена</Label>
+            <TextBox x:Name="priceElem"/>
+            <Label>Скидка</Label>
+            <TextBox x:Name="discontElem"/>
+            <Label>Остаток на складе</Label>
+            <TextBox x:Name="quantityElem"/>
+            <Button Margin="0,5" Click="Button_Click">Сохранить</Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>
