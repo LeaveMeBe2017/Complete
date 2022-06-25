@@ -41,10 +41,7 @@ namespace Test1
 
             User user = Helpers.Auth(login, password);
 
-            if (user == null)
-            {
-                return;
-            }
+          
             Store.user = user;
 
             if(user.UserRole == 1)
